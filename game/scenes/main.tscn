@@ -244,25 +244,6 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 3
 
-[node name="Popup" type="Popup" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 904.0
-margin_bottom = 520.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
-_sections_unfolded = [ "Popup" ]
-
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_continue" to="." method="_on_btn_continue_pressed"]
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_newgame" to="." method="_on_btn_newgame_pressed"]

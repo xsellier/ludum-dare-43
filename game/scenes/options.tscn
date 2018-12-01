@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/options.gd" type="Script" id=1]
 [ext_resource path="res://assets/icon.png" type="Texture" id=2]
 
-[node name="options" type="MarginContainer"]
+[node name="options" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
