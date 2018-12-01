@@ -1,6 +1,6 @@
 extends Spatial
 
-export(int, 2, 5) var Y_AXIS_MAX_DECAL = 3
+export(int, 1, 8) var Y_AXIS_MAX_DECAL = 3
 
 onready var camera = get_node('camera')
 onready var mouse_previous_position = get_viewport().get_mouse_position()
