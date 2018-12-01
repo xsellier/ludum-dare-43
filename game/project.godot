@@ -10,16 +10,12 @@ config_version=3
 
 [application]
 
-config/name="ludum-dare-43"
+config/name="spaceship"
 run/main_scene="res://scenes/world.tscn"
-config/icon="res://assets/icon.png"
-
-[gui]
-
-theme/custom="res://ui/theme-main.tres"
+config/icon="res://icon.png"
 
 [rendering]
 
-quality/shading/force_vertex_shading=true
 environment/default_clear_color=Color( 0.0705882, 0.0901961, 0.117647, 1 )
+quality/filters/msaa=4
 environment/default_environment="res://world/martian-env.tres"
