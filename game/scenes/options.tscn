@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://scripts/options.gd" type="Script" id=1]
 [ext_resource path="res://assets/icon.png" type="Texture" id=2]
 
-[node name="main" type="MarginContainer" index="0"]
+[node name="options" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -24,7 +24,6 @@ _sections_unfolded = [ "Rect", "custom_constants" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -47,7 +46,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 216.0
+margin_left = 284.0
+margin_right = 500.0
 margin_bottom = 440.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -95,15 +95,84 @@ custom_constants/separation = 30
 alignment = 1
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="btn_continue" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="0"]
+[node name="item1" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 108.0
+margin_top = 135.0
 margin_right = 216.0
-margin_bottom = 128.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="sound_volume" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/item1" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1.0
+margin_right = 106.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Sound volume"
+align = 3
+valign = 3
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/VBoxContainer/item1" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_right = 216.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="btn_return" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 181.0
+margin_right = 216.0
+margin_bottom = 201.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -115,55 +184,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Continue"
-flat = false
-align = 1
-
-[node name="btn_newgame" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 158.0
-margin_right = 216.0
-margin_bottom = 178.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "New game"
-flat = false
-align = 1
-
-[node name="btn_options" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 208.0
-margin_right = 216.0
-margin_bottom = 228.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Options"
+text = "Back to main menu"
 flat = false
 align = 1
 
@@ -207,66 +228,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 220.0
-margin_right = 784.0
-margin_bottom = 440.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-use_top_left = false
-_sections_unfolded = [ "Size Flags" ]
-
-[node name="Characters" type="TextureRect" parent="HBoxContainer/CenterContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 188.0
-margin_right = 314.0
-margin_bottom = 252.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 2 )
-stretch_mode = 3
-
-[node name="Popup" type="Popup" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 904.0
-margin_bottom = 520.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
-_sections_unfolded = [ "Popup" ]
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_continue" to="." method="_on_btn_continue_pressed"]
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_newgame" to="." method="_on_btn_newgame_pressed"]
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_options" to="." method="_on_btn_options_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_return" to="." method="_on_btn_return_pressed"]
 
 
