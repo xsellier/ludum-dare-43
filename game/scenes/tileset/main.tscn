@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/dae/BoxBlack.material" type="Material" id=3]
 [ext_resource path="res://assets/dae/Matériau.material" type="Material" id=4]
 
-[sub_resource type="PlaneMesh" id=2]
+[sub_resource type="PlaneMesh" id=1]
 
 material = ExtResource( 1 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
@@ -13,13 +13,12 @@ size = Vector2( 2, 2 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[sub_resource type="PlaneShape" id=3]
+[sub_resource type="PlaneShape" id=2]
 
 plane = Plane( 0, 1, 0, 0 )
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id=3]
 
-resource_name = "Cylindre"
 blend_shape_mode = 1
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 surfaces/0 = {
@@ -321,7 +320,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry", "LOD", "Transform", "Visibility", "material" ]
@@ -339,7 +338,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="shape" type="CollisionShape" parent="floor/collision" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -355,7 +354,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
