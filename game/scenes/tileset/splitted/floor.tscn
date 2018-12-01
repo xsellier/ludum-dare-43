@@ -16,7 +16,6 @@ plane = Plane( 0, 1, 0, 0 )
 
 [node name="floor" type="MeshInstance"]
 
-editor/display_folded = true
 layers = 1
 material_override = null
 cast_shadow = 0
