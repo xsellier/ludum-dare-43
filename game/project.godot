@@ -12,10 +12,10 @@ config_version=3
 
 config/name="spaceship"
 run/main_scene="res://scenes/world.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/icon.png"
 
 [rendering]
 
 environment/default_clear_color=Color( 0.0705882, 0.0901961, 0.117647, 1 )
-quality/filters/msaa=4
+quality/filters/msaa=3
 environment/default_environment="res://world/martian-env.tres"
