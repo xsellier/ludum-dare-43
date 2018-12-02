@@ -5,8 +5,8 @@
 		<author>Anonymous</author>
 		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
 	</contributor>
-	<created>2018-12-02T09:25:20Z</created>
-	<modified>2018-12-02T09:25:20Z</modified>
+	<created>2018-12-02T14:49:20Z</created>
+	<modified>2018-12-02T14:49:20Z</modified>
 	<unit meter="1.0" name="meter"/>
 	<up_axis>Z_UP</up_axis>
 </asset>
@@ -432,7 +432,7 @@
 <library_visual_scenes>
 	<visual_scene id="id-scene-1" name="scene">
 		<node id="PodCryoTube" name="PodCryoTube" type="NODE">
-			<matrix sid="transform"> -1.0 0.0 -8.742277657347586e-08 -0.6203815340995789 0.0 1.0 0.0 -1.9371700286865234 8.742277657347586e-08 0.0 -1.0 -0.03213877230882645 0.0 0.0 0.0 1.0  </matrix>
+			<matrix sid="transform"> -1.0 0.0 -8.742277657347586e-08 0.0 0.0 1.0 0.0 0.0 8.742277657347586e-08 0.0 -1.0 0.0 0.0 0.0 0.0 1.0  </matrix>
 			<instance_geometry url="#id-mesh-8">
 				<bind_material>
 					<technique_common>

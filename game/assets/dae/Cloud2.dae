@@ -5,8 +5,8 @@
 		<author>Anonymous</author>
 		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
 	</contributor>
-	<created>2018-12-02T09:22:52Z</created>
-	<modified>2018-12-02T09:22:52Z</modified>
+	<created>2018-12-02T14:43:26Z</created>
+	<modified>2018-12-02T14:43:26Z</modified>
 	<unit meter="1.0" name="meter"/>
 	<up_axis>Z_UP</up_axis>
 </asset>
@@ -284,7 +284,7 @@
 <library_visual_scenes>
 	<visual_scene id="id-scene-1" name="scene">
 		<node id="CloudTwo" name="CloudTwo" type="NODE">
-			<matrix sid="transform"> 1.0 0.0 0.0 -1.5252132415771484 0.0 1.0 0.0 -11.107290267944336 0.0 0.0 1.0 -0.7800493240356445 0.0 0.0 0.0 1.0  </matrix>
+			<matrix sid="transform"> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0  </matrix>
 			<instance_geometry url="#id-mesh-4">
 				<bind_material>
 					<technique_common>

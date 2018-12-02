@@ -5,8 +5,8 @@
 		<author>Anonymous</author>
 		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
 	</contributor>
-	<created>2018-12-02T09:21:06Z</created>
-	<modified>2018-12-02T09:21:06Z</modified>
+	<created>2018-12-02T14:54:12Z</created>
+	<modified>2018-12-02T14:54:12Z</modified>
 	<unit meter="1.0" name="meter"/>
 	<up_axis>Z_UP</up_axis>
 </asset>
@@ -214,7 +214,7 @@
 <library_visual_scenes>
 	<visual_scene id="id-scene-1" name="scene">
 		<node id="TrashAntenna" name="TrashAntenna" type="NODE">
-			<matrix sid="transform"> 0.3114888370037079 0.945327877998352 0.09659135341644287 -4.641529083251953 0.0 0.10164837539196014 -0.9948204159736633 -6.194301605224609 -0.9502497911453247 0.3098754584789276 0.03166233375668526 0.009136207401752472 0.0 0.0 0.0 1.0  </matrix>
+			<matrix sid="transform"> 0.3114888370037079 0.945327877998352 0.09659135341644287 0.0 0.0 0.10164837539196014 -0.9948204159736633 0.0 -0.9502497911453247 0.3098754584789276 0.03166233375668526 0.0 0.0 0.0 0.0 1.0  </matrix>
 			<instance_geometry url="#id-mesh-6">
 				<bind_material>
 					<technique_common>
