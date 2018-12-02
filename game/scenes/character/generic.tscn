@@ -14,7 +14,7 @@
 
 extents = Vector3( 0.5, 0.1, 0.5 )
 
-[node name="character" type="Position3D"]
+[node name="character" type="Position3D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -435,11 +435,13 @@ rounded = false
 percent_visible = false
 _sections_unfolded = [ "Grow Direction", "Percent", "Rect", "Size Flags" ]
 
-[node name="ShapeColon" parent="." index="2" instance=ExtResource( 8 )]
+[node name="skeleton" type="Skeleton" parent="." index="2"]
+
+[node name="colon" parent="skeleton" index="0" instance=ExtResource( 8 )]
 
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 1.948, 0 )
 
-[node name="Area" type="Area" parent="ShapeColon" index="0"]
+[node name="area" type="Area" parent="skeleton/colon" index="0"]
 
 transform = Transform( 0.6, 0, 0, 0, 1.7, 0, 0, 0, 0.680472, 0, -1.98546, 0 )
 input_ray_pickable = false
@@ -464,7 +466,7 @@ reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 script = ExtResource( 9 )
 
-[node name="CollisionShape" type="CollisionShape" parent="ShapeColon/Area" index="0"]
+[node name="collision" type="CollisionShape" parent="skeleton/colon/area" index="0"]
 
 shape = SubResource( 1 )
 disabled = false

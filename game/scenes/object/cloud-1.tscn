@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/dae/White.material" type="Material" id=1]
+[ext_resource path="res://material/cloud.tres" type="Material" id=1]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -20,8 +20,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 585
 }
+_sections_unfolded = [ "surface_1" ]
 
-[node name="CloudTwo" type="MeshInstance"]
+[node name="CloudTwo" type="MeshInstance" index="0"]
 
 layers = 1
 material_override = null
