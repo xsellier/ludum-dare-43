@@ -7,7 +7,7 @@ static func remove_children(node):
 
 static func remove_child_by_node(node, child):
   if child != null and weakref(child).get_ref():
-    child.queue_free()
+    node.remove_child(child)
 
 static func reparent(child, new_parent):
   var parent = child.get_parent()

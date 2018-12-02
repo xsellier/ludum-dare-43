@@ -4,7 +4,7 @@ onready var area_node = get_node('door/area')
 
 signal character_entered(character)
 
-func connect_signals():
+func _ready():
   area_node.connect('area_entered', self, 'area_entered')
 
 func area_entered(object):

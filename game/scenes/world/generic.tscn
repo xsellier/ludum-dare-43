@@ -8,8 +8,6 @@
 up_vector = Vector3( 0, 1, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Transform", "Visibility" ]
-contain_mines = false
-contain_spawner = false
 
 [node name="camera" parent="." index="0" instance=ExtResource( 2 )]
 
