@@ -10,6 +10,7 @@ var end = Vector3()
 var m = SpatialMaterial.new()
 
 onready var gate_node = get_node('interactif/gate')
+var mine = preload("res://scenes/tileset/mine.tscn")
 
 var path = []
 var draw_path = OS.is_debug_build()
@@ -28,8 +29,22 @@ func _ready():
     spawner = get_node('interactif/spawner')
     spawner.connect('spawn_character', self, 'set_character')
 
+    # generate mines
+  if has_node('interactif/mine/spot'):
+    var allMinesSpot = get_node('interactif/mine/spot')
+    for spot in allMinesSpot.get_children():
+      if randi() % 20 > 12:
+        var node = mine.instance()
+        get_node('interactif/mine').add_child(node)
+        node.set_transform(spot.get_transform())
+        node.connect('character_pick_zinc', self, 'character_pick_zinc')
+
+func character_pick_zinc(player, zinc) :
+  print("TODO add zinc to game stats")
+  zinc.queue_free()
+
 func set_character(character_node, use_spawner = true):
-  var position = gate_node.translation
+  var position = get_node('exit').translation
 
   if use_spawner:
     add_child(character_node)

@@ -1,6 +1,6 @@
 extends Spatial
 
-const NINE_PATCH_DECAL = Vector2(0.0, -10.0)
+const NINE_PATCH_DECAL = Vector2(0.0, -20.0)
 
 onready var info_node = get_node('info')
 

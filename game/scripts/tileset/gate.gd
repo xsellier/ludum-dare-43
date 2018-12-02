@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var area_node = get_node('area')
+onready var area_node = get_node('door/area')
 
 signal character_entered(character)
 
