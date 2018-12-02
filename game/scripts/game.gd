@@ -1,7 +1,6 @@
 extends Node
 
 const node_util = preload('res://scripts/utils/node.gd')
-const GATE_NODES = 'world_gate'
 
 const WORLDS = [{
   scene = preload('res://scenes/world/generic-spaceship.tscn'),
@@ -20,6 +19,7 @@ onready var environment_node = get_node('WorldEnvironment')
 onready var world_parent = get_node('world')
 onready var timer_node = get_node('loader')
 onready var loading_panel = get_node('loading/center')
+onready var current_item = get_world_scene()
 
 func _ready():
   timer_node.connect('timeout', self, 'attach_new_world')
@@ -42,6 +42,14 @@ func attach_new_world():
     WORLDS[world_index].instance.connect('character_gate_entered', self, 'change_world', [], CONNECT_DEFERRED)
 
   loading_panel.hide()
+
+  if WORLDS[world_index].generated:
+    current_item.restore()
+  else:
+    # Flag world as generated
+    WORLDS[world_index].generated = true
+
+    current_item.generate_world()
 
 func change_world(character):
   loading_panel.show()
