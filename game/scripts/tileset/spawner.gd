@@ -1,14 +1,19 @@
 extends Spatial
 
-const DEFAULT_INTERVAL = 5.0
 const CHARACTER_SCENE = preload('res://scenes/character/generic.tscn')
 
-var current_character = null
-
-signal spawn_character(character)
+export(String, 'LABEL_FARMER', 'LABEL_GEOLOGUE', 'LABEL_ENGINEER', 'LABEL_MECANO') var character_type
+var used = false
 
 func spawn_character():
-  return CHARACTER_SCENE.instance()
+  var character = null
 
-func get_character():
-  return current_character
+  if not used:
+    used = true
+    character = CHARACTER_SCENE.instance()
+    character.set_type(character_type)
+
+  return character
+
+func is_used():
+  return used

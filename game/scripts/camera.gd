@@ -1,5 +1,7 @@
 extends Spatial
 
+const CAMERA_MAX_DECAL = 32.0
+
 onready var camera = get_node('camera')
 onready var mouse_previous_position = get_viewport().get_mouse_position()
 
@@ -32,6 +34,10 @@ func _process(delta):
     camera.fov = clamp(camera.fov + 10.0, 10, 80)
 
   translate(move * delta * 25.0)
+
+  translation.x = clamp(translation.x, -CAMERA_MAX_DECAL, CAMERA_MAX_DECAL)
+  translation.z = clamp(translation.z, -CAMERA_MAX_DECAL, CAMERA_MAX_DECAL)
+
   mouse_previous_position = current_mouse_position
   
   

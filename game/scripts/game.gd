@@ -20,45 +20,36 @@ onready var environment_node = get_node('WorldEnvironment')
 onready var world_parent = get_node('world')
 onready var timer_node = get_node('loader')
 onready var loading_panel = get_node('loading/center')
-onready var current_item = get_world_scene()
-
-var gate_nodes = null
 
 func _ready():
   timer_node.connect('timeout', self, 'attach_new_world')
+
+  get_world_scene()
   attach_new_world()
 
 func attach_new_world():
   # Update environment
-  loading_panel.hide()
   environment_node.environment = WORLDS[world_index].world
 
-  world_parent.add_child(current_item)
-  gate_nodes = get_tree().get_nodes_in_group(GATE_NODES)
-
-  for gate_node in gate_nodes:
-    gate_node.connect('character_entered', self, 'change_world', [], CONNECT_ONESHOT)
+  node_util.reparent(WORLDS[world_index].instance, world_parent)
 
   if WORLDS[world_index].generated:
-    current_item.restore()
+    WORLDS[world_index].instance.call_deferred('restore')
   else:
     # Flag world as generated
     WORLDS[world_index].generated = true
+    WORLDS[world_index].instance.call_deferred('generate_world')
+    WORLDS[world_index].instance.connect('character_gate_entered', self, 'change_world', [], CONNECT_DEFERRED)
 
-    current_item.generate_world()
+  loading_panel.hide()
 
 func change_world(character):
+  loading_panel.show()
   world_index = (world_index + 1) % WORLDS.size()
-  var next_item = get_world_scene()
-
-  node_util.reparent(character, next_item)
-  character.set_name('character')
-
-  # Clean old world
-  current_item = next_item
 
   node_util.remove_children(world_parent)
-  loading_panel.show()
+  node_util.reparent(character, get_world_scene())
+
   timer_node.start()
 
 func get_world_scene():

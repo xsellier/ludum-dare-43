@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/tileset/gate.gd" type="Script" id=1]
 [ext_resource path="res://scenes/object/door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/utils/area.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 0.807901, 1.31619, 0.977187 )
 
-[node name="gate-0" type="Spatial" groups=[
+[node name="gate-0" type="Spatial" index="0" groups=[
 "world_gate",
 ]]
 
@@ -38,6 +39,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
+script = ExtResource( 3 )
 
 [node name="collision" type="CollisionShape" parent="door/area" index="0"]
 

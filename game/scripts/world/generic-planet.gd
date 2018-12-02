@@ -10,6 +10,7 @@ func generate_world():
 
   _generate_mines()
   _generate_trash()
+  gate_node.connect('character_entered', self, 'character_entered', [], CONNECT_DEFERRED)
 
 func _generate_mines():
   var mines_to_generate = [] + mine_spots.get_children()

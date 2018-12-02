@@ -2,7 +2,11 @@ extends Spatial
 
 const NINE_PATCH_DECAL = Vector2(0.0, -20.0)
 
+onready var character_type = 'LABEL_FARMER'
 onready var info_node = get_node('info')
+
+func set_type(type):
+  character_type = type
 
 func is_dead():
   return false

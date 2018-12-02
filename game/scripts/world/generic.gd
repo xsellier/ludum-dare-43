@@ -3,12 +3,11 @@ extends Navigation
 # Member variables
 const SPEED = 4.0
 const number_util = preload('res://scripts/utils/number.gd')
+const node_util = preload('res://scripts/utils/node.gd')
 
 onready var interactive_node = get_node('interactif')
 onready var gate_node = interactive_node.get_node('gate')
 onready var exit_node = interactive_node.get_node('exit')
-onready var exit_translation = exit_node.translation
-onready var spawner = null
 
 var begin = Vector3()
 var end = Vector3()
@@ -17,23 +16,19 @@ var path = []
 var draw_path = OS.is_debug_build()
 var current_character = null
 
+signal character_gate_entered(character)
+
 func _ready():
   m.flags_unshaded = true
   m.flags_use_point_size = true
   m.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
 
+func character_entered(character):
+  emit_signal('character_gate_entered', character)
+
 func restore():
-  set_character(get_node('character'), false)
-
-func set_character(character_node, use_spawner = true):
-  var translation = exit_translation
-
-  if use_spawner:
-    add_child(character_node)
-    translation = spawner.translation
-
-  current_character = character_node
-  current_character.translation = get_closest_point(translation)
+  current_character = get_node('character')
+  current_character.translation = get_closest_point(exit_node.translation)
 
   set_process(false)
 
