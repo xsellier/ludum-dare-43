@@ -1,17 +1,22 @@
-
 extends Navigation
 
 # Member variables
 const SPEED = 4.0
+const number_util = preload('res://scripts/utils/number.gd')
+const MINE_SCENE = preload('res://scenes/tileset/mine.tscn')
+
+export(bool) var contain_mines = false
+export(bool) var contain_spawner = false
+
+onready var interactive_node = get_node('interactif')
+onready var gate_node = interactive_node.get_node('gate')
+onready var exit_node = interactive_node.get_node('exit')
+onready var exit_translation = exit_node.translation
 
 var spawner = null
 var begin = Vector3()
 var end = Vector3()
 var m = SpatialMaterial.new()
-
-onready var gate_node = get_node('interactif/gate')
-var mine = preload("res://scenes/tileset/mine.tscn")
-
 var path = []
 var draw_path = OS.is_debug_build()
 var current_character = null
@@ -25,33 +30,44 @@ func _ready():
 
   if has_node('character'):
     set_character(get_node('character'), false)
-  elif has_node('interactif/spawner'):
-    spawner = get_node('interactif/spawner')
+  elif contain_spawner:
+    spawner = interactive_node.get_node('spawner')
     spawner.connect('spawn_character', self, 'set_character')
 
-    # generate mines
-  if has_node('interactif/mine/spot'):
-    var allMinesSpot = get_node('interactif/mine/spot')
-    for spot in allMinesSpot.get_children():
-      if randi() % 20 > 12:
-        var node = mine.instance()
-        get_node('interactif/mine').add_child(node)
-        node.set_transform(spot.get_transform())
-        node.connect('character_pick_zinc', self, 'character_pick_zinc')
+  if contain_mines:
+    _generate_mines()
+
+func _generate_mines():
+  var mine_spots = interactive_node.get_node('mine/spot')
+  var mines_to_generate = [] + mine_spots.get_children()
+  var mine_amount_remove = number_util.random(2, mines_to_generate.size() - 2)
+
+  for index in range(0, mine_amount_remove):
+    var mine_to_remove = number_util.random(0, mines_to_generate.size())
+
+    mines_to_generate.remove(mine_to_remove)
+
+  for mine_spot in mines_to_generate:
+    var mine_scene_instance = MINE_SCENE.instance()
+
+    interactive_node.get_node('mine').add_child(mine_scene_instance)
+
+    mine_scene_instance.translation = mine_spot.translation
+    mine_scene_instance.connect('character_pick_zinc', self, 'character_pick_zinc')
 
 func character_pick_zinc(player, zinc) :
-  print("TODO add zinc to game stats")
+  # TODO add zinc to game stats
   zinc.queue_free()
 
 func set_character(character_node, use_spawner = true):
-  var position = get_node('exit').translation
+  var translation = exit_translation
 
   if use_spawner:
     add_child(character_node)
-    position = spawner.translation
+    translation = spawner.translation
 
   current_character = character_node
-  current_character.translation = get_closest_point(position)
+  current_character.translation = get_closest_point(translation)
   gate_node.connect_signals()
 
 func _get_character():
@@ -109,7 +125,7 @@ func _update_path():
   set_process(true)
 
   if (draw_path):
-    var im = get_node("draw")
+    var im = get_node('draw')
     im.set_material_override(m)
     im.clear()
     im.begin(Mesh.PRIMITIVE_POINTS, null)
@@ -129,9 +145,9 @@ func _input(event):
   if character == null:
     return
 
-  if (event.is_class("InputEventMouseButton") and event.button_index == BUTTON_LEFT and event.pressed):
-    var from = get_node("camera/camera").project_ray_origin(event.position)
-    var to = from + get_node("camera/camera").project_ray_normal(event.position)*100
+  if (event.is_class('InputEventMouseButton') and event.button_index == BUTTON_LEFT and event.pressed):
+    var from = get_node('camera/camera').project_ray_origin(event.position)
+    var to = from + get_node('camera/camera').project_ray_normal(event.position)*100
     
     begin = get_closest_point(character.get_translation())
     end = get_closest_point_to_segment(from, to)

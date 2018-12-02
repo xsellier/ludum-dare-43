@@ -15,14 +15,18 @@ onready var world_index = 0
 onready var current_item = WORLDS[world_index].scene.instance()
 onready var environment_node = get_node('WorldEnvironment')
 onready var world_parent = get_node('world')
+onready var timer_node = get_node('loader')
+onready var loading_panel = get_node('loading/center')
 
 var gate_nodes = null
 
 func _ready():
+  timer_node.connect('timeout', self, 'attach_new_world')
   attach_new_world()
 
 func attach_new_world():
   # Update environment
+  loading_panel.hide()
   environment_node.environment = WORLDS[world_index].world
 
   world_parent.add_child(current_item)
@@ -30,7 +34,6 @@ func attach_new_world():
 
   for gate_node in gate_nodes:
     gate_node.connect('character_entered', self, 'change_world', [], CONNECT_ONESHOT)
-
 
 func change_world(character):
   world_index = (world_index + 1) % WORLDS.size()
@@ -43,4 +46,5 @@ func change_world(character):
   current_item = next_item
 
   node_util.remove_children(world_parent)
-  call_deferred('attach_new_world')
+  loading_panel.show()
+  timer_node.start()

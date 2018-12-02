@@ -5,9 +5,9 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 0.807901, 1.31619, 0.435535 )
+extents = Vector3( 0.807901, 1.31619, 0.977187 )
 
-[node name="gate-0" type="Spatial" index="0" groups=[
+[node name="gate-0" type="Spatial" groups=[
 "world_gate",
 ]]
 
