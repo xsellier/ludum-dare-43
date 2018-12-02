@@ -51,7 +51,7 @@ ui_zoom_out=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"reso
 [locale]
 
 locale_filter=[ 1, [ "en", "fr" ] ]
-translations=PoolStringArray( "res://locales/locales.csv", "res://locales/locales.csv.import", "res://locales/locales.en.translation", "res://locales/locales.fr.translation" )
+translations=PoolStringArray( "res://locales/locales.en.translation", "res://locales/locales.fr.translation" )
 translation_remaps={
 "res://locales/locales.csv": PoolStringArray(  ),
 "res://locales/locales.en.translation": PoolStringArray(  ),
