@@ -9,7 +9,7 @@ var colors = {
 }
 
 func _ready():
-	randomize()
-	var material = SpatialMaterial.new()
-	material.albedo_color = colors[colors.keys()[randi()%colors.size()]]
-	self.set_surface_material(3, material)
+  randomize()
+  var material = SpatialMaterial.new()
+  material.albedo_color = colors[colors.keys()[randi()%colors.size()]]
+  self.set_surface_material(3, material)

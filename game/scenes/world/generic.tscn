@@ -11,6 +11,8 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="camera" parent="." index="0" instance=ExtResource( 2 )]
 
+editor/display_folded = true
+
 [node name="draw" type="ImmediateGeometry" parent="." index="1"]
 
 layers = 1
@@ -25,9 +27,12 @@ lod_max_hysteresis = 0.0
 
 [node name="interactif" type="Spatial" parent="." index="2"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="exit" type="Position3D" parent="interactif" index="0"]
+
+[node name="characters" type="Spatial" parent="." index="3"]
 
 
 [editable path="camera"]

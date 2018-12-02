@@ -5,7 +5,8 @@ const TRASH_SCENE = preload('res://scenes/tileset/trash.tscn')
 
 onready var mine_spots = interactive_node.get_node('mine/spot')
 
-func generate_world():
+func generate_world(game_node):
+  current_game_node = game_node
   restore()
 
   _generate_mines()

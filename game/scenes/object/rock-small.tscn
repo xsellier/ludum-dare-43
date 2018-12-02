@@ -1,8 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=2]
 
-[ext_resource path="res://material/rock.tres" type="ArrayMesh" id=1]
-
-[node name="RockSmall" type="MeshInstance"]
+[node name="RockSmall" type="MeshInstance" index="0"]
 
 layers = 1
 material_override = null
@@ -13,8 +11,8 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 1 )
+mesh = null
 skeleton = NodePath("..")
-material/0 = null
+_sections_unfolded = [ "Geometry", "LOD" ]
 
 

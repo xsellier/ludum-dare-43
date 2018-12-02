@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 
 resource_name = "Brown-Orange"
 render_priority = 0
@@ -53,9 +53,8 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id=2]
 
-resource_name = "Icosphère"
 blend_shape_mode = 1
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 surfaces/0 = {
@@ -65,7 +64,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 98051,
 "index_count": 240,
-"material": SubResource( 2 ),
+"material": SubResource( 1 ),
 "name": "Brown-Orange",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -73,7 +72,7 @@ surfaces/0 = {
 }
 _sections_unfolded = [ "surface_1" ]
 
-[node name="RockBig" type="MeshInstance"]
+[node name="RockBig" type="MeshInstance" index="0"]
 
 layers = 1
 material_override = null
@@ -84,7 +83,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 

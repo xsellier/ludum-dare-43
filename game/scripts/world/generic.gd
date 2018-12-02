@@ -6,37 +6,41 @@ const number_util = preload('res://scripts/utils/number.gd')
 const node_util = preload('res://scripts/utils/node.gd')
 
 onready var interactive_node = get_node('interactif')
+onready var characters_node = get_node('characters')
 onready var gate_node = interactive_node.get_node('gate')
 onready var exit_node = interactive_node.get_node('exit')
 
+var current_game_node
 var begin = Vector3()
 var end = Vector3()
 var m = SpatialMaterial.new()
 var path = []
 var draw_path = OS.is_debug_build()
-var current_character = null
 
-signal character_gate_entered(character)
+signal character_gate_entered()
 
 func _ready():
   m.flags_unshaded = true
   m.flags_use_point_size = true
   m.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
 
-func character_entered(character):
-  emit_signal('character_gate_entered', character)
+func character_entered():
+  emit_signal('character_gate_entered')
 
 func restore():
-  current_character = get_node('character')
-  current_character.translation = get_closest_point(exit_node.translation)
+  var character = current_game_node.previous_world._get_character()
+
+  node_util.reparent(character, characters_node)
+  character.translation = get_closest_point(exit_node.translation)
 
   set_process(false)
 
 func _get_character():
+  var characters = characters_node.get_children()
   var character = null
 
-  if current_character != null and not current_character.is_dead():
-    character = current_character
+  if characters.size() == 1 and not characters[0].is_dead():
+    character = characters[0]
 
   return character
 
@@ -116,5 +120,5 @@ func _input(event):
 
     _update_path()
 
-func generate_world():
+func generate_world(game_node):
   pass

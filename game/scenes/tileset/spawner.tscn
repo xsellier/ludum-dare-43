@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/tileset/spawner.gd" type="Script" id=1]
 [ext_resource path="res://scenes/object/cryotube-up.tscn" type="PackedScene" id=2]
 
-[node name="spawner" type="Position3D"]
+[node name="spawner" type="Position3D" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.735095, 0 )
 script = ExtResource( 1 )
