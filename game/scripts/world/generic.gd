@@ -4,8 +4,10 @@ extends Navigation
 const SPEED = 4.0
 const number_util = preload('res://scripts/utils/number.gd')
 const MINE_SCENE = preload('res://scenes/tileset/mine.tscn')
+const TRASH_SCENE = preload('res://scenes/tileset/trash.tscn')
 
 export(bool) var contain_mines = false
+export(bool) var contain_trash = false
 export(bool) var contain_spawner = false
 
 onready var interactive_node = get_node('interactif')
@@ -36,6 +38,9 @@ func _ready():
 
   if contain_mines:
     _generate_mines()
+    
+  if contain_trash:
+    _generate_trash()
 
 func _generate_mines():
   var mine_spots = interactive_node.get_node('mine/spot')
@@ -55,9 +60,31 @@ func _generate_mines():
     mine_scene_instance.translation = mine_spot.translation
     mine_scene_instance.connect('character_pick_zinc', self, 'character_pick_zinc')
 
+func _generate_trash():
+  var trash_spots = interactive_node.get_node('trash/spot')
+  var trashs_to_generate = [] + trash_spots.get_children()
+  var trash_amount_remove = number_util.random(4, trashs_to_generate.size() - 3)
+
+  for index in range(0, trash_amount_remove):
+    var trash_to_remove = number_util.random(0, trashs_to_generate.size())
+
+    trashs_to_generate.remove(trash_to_remove)
+
+  for trash_spot in trashs_to_generate:
+    var trash_scene_instance = TRASH_SCENE.instance()
+
+    interactive_node.get_node('trash').add_child(trash_scene_instance)
+
+    trash_scene_instance.translation = trash_spot.translation
+    trash_scene_instance.connect('character_pick_trash', self, 'character_pick_trash')
+
 func character_pick_zinc(player, zinc) :
   # TODO add zinc to game stats
   zinc.queue_free()
+
+func character_pick_trash(player, trash) :
+  # TODO add trash to game stats
+  trash.queue_free()
 
 func set_character(character_node, use_spawner = true):
   var translation = exit_translation

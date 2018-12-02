@@ -35,9 +35,9 @@ surfaces/1 = {
 "vertex_count": 16
 }
 
-[node name="TrashShopShieldSmall" type="MeshInstance"]
+[node name="TrashShopShieldSmall" type="MeshInstance" index="0"]
 
-transform = Transform( 0.984964, 7.55155e-09, 0.172759, 0.172759, -4.30542e-08, -0.984964, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 0.984964, 7.55155e-09, 0.172759, 0.172759, -4.30542e-08, -0.984964, 0, 1, -4.37114e-08, 0, 0.110248, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
