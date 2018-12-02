@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/dae/LightGrey.material" type="Material" id=1]
 [ext_resource path="res://assets/dae/DarkGrey.material" type="Material" id=2]
 [ext_resource path="res://assets/dae/Red.material" type="Material" id=3]
 [ext_resource path="res://assets/dae/ColonColor.material" type="Material" id=4]
+[ext_resource path="res://scripts/object/colon.gd" type="Script" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -62,6 +63,7 @@ surfaces/3 = {
 "skeleton_aabb": [  ],
 "vertex_count": 1100
 }
+_sections_unfolded = [ "surface_1", "surface_2", "surface_3", "surface_4" ]
 
 [node name="ShapeColon" type="MeshInstance" index="0"]
 
@@ -81,6 +83,7 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
-_sections_unfolded = [ "Transform" ]
+script = ExtResource( 5 )
+_sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 

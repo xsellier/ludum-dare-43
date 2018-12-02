@@ -13,7 +13,7 @@
 
 extents = Vector3( 0.5, 0.1, 0.5 )
 
-[node name="character" type="Position3D"]
+[node name="character" type="Position3D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
