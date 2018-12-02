@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/theme-main.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/main.gd" type="Script" id=2]
-[ext_resource path="res://assets/icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/menu-background.png" type="Texture" id=3]
+[ext_resource path="res://ui/tile-font.tres" type="Theme" id=4]
 
-[node name="main" type="MarginContainer"]
+[node name="main" type="CenterContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 200.0
+margin_bottom = -20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -17,20 +20,29 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
+use_top_left = false
 script = ExtResource( 2 )
 _sections_unfolded = [ "Rect", "Theme", "custom_constants" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
+[node name="background" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -160 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="container" type="HBoxContainer" parent="." index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 904.0
-margin_bottom = 520.0
+margin_left = 644.0
+margin_top = 224.0
+margin_right = 956.0
+margin_bottom = 456.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -39,69 +51,51 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" index="0"]
+[node name="main" type="VBoxContainer" parent="container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 216.0
-margin_bottom = 440.0
+margin_right = 312.0
+margin_bottom = 232.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 32
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer" index="0"]
+[node name="menu" type="VBoxContainer" parent="container/main" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 216.0
-margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 3
-_sections_unfolded = [ "Size Flags" ]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 68.0
-margin_right = 216.0
-margin_bottom = 404.0
+margin_right = 312.0
+margin_bottom = 156.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
-custom_constants/separation = 30
+theme = ExtResource( 4 )
 alignment = 1
-_sections_unfolded = [ "Size Flags", "custom_constants" ]
+_sections_unfolded = [ "Size Flags", "Theme", "custom_constants" ]
 
-[node name="btn_continue" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="0"]
+[node name="newgame" type="Button" parent="container/main/menu" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 108.0
-margin_right = 216.0
-margin_bottom = 128.0
+margin_right = 312.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 312, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -113,19 +107,21 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Continue"
+text = "LABEL_NEW_GAME"
 flat = false
 align = 1
+_sections_unfolded = [ "Rect" ]
 
-[node name="btn_newgame" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="1"]
+[node name="exit" type="Button" parent="container/main/menu" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 158.0
-margin_right = 216.0
-margin_bottom = 178.0
+margin_top = 80.0
+margin_right = 312.0
+margin_bottom = 156.0
+rect_min_size = Vector2( 312, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -137,115 +133,72 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "New game"
+text = "BUTTON_EXIT"
 flat = false
 align = 1
+_sections_unfolded = [ "Rect" ]
 
-[node name="btn_options" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" index="2"]
+[node name="credits" type="VBoxContainer" parent="container/main" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 208.0
-margin_right = 216.0
-margin_bottom = 228.0
+margin_top = 188.0
+margin_right = 312.0
+margin_bottom = 232.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Options"
-flat = false
-align = 1
+custom_constants/separation = 4
+alignment = 1
+_sections_unfolded = [ "custom_constants" ]
 
-[node name="version" type="Label" parent="HBoxContainer/VBoxContainer" index="2"]
+[node name="version" type="Label" parent="container/main/credits" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 408.0
-margin_right = 216.0
-margin_bottom = 422.0
+margin_right = 312.0
+margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "v ludum dare 43"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="description" type="Label" parent="HBoxContainer/VBoxContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 426.0
-margin_right = 216.0
-margin_bottom = 440.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Made by Binogure Leifbeth Tilican"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 220.0
-margin_right = 784.0
-margin_bottom = 440.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-use_top_left = false
-_sections_unfolded = [ "Size Flags" ]
+text = "v ludum dare 43"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
-[node name="Characters" type="TextureRect" parent="HBoxContainer/CenterContainer" index="0"]
+[node name="description" type="Label" parent="container/main/credits" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 188.0
-margin_right = 314.0
-margin_bottom = 252.0
+margin_top = 24.0
+margin_right = 312.0
+margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 2
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 3
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_continue" to="." method="_on_btn_continue_pressed"]
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_newgame" to="." method="_on_btn_newgame_pressed"]
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/btn_options" to="." method="_on_btn_options_pressed"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Made by Binogure Leifbeth Tilican"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 

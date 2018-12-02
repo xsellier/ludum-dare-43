@@ -1,11 +1,16 @@
 extends Control
 
-func _on_btn_newgame_pressed():
-	$popup.popup()
-	print('Change scene to newgame')
+const NEW_GAME = preload('res://scenes/game.tscn')
 
-func _on_btn_continue_pressed():
-	print('Change scene to continue')
+onready var newgame_button = get_node('container/main/menu/newgame')
+onready var exit_button = get_node('container/main/menu/exit')
 
-func _on_btn_options_pressed():
-	print('Change scene to options')
+func _ready():
+  exit_button.connect('pressed', self, 'exit', [], CONNECT_ONESHOT)
+  newgame_button.connect('pressed', self, 'newgame')
+
+func newgame():
+  get_tree().change_scene_to(NEW_GAME)
+
+func exit():
+  get_tree().quit()

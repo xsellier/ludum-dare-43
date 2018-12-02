@@ -21,7 +21,6 @@ tracks/0/keys = {
 
 [node name="sun" type="Spatial"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="light" type="OmniLight" parent="." index="0"]
@@ -36,7 +35,7 @@ light_specular = 0.5
 light_bake_mode = 1
 light_cull_mask = -1
 shadow_enabled = true
-shadow_color = Color( 0.0705882, 0.0901961, 0.117647, 1 )
+shadow_color = Color( 0, 0.25879, 0.621094, 1 )
 shadow_bias = 0.3
 shadow_contact = 1.0
 shadow_reverse_cull_face = true
@@ -47,7 +46,53 @@ omni_shadow_mode = 1
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
-[node name="animation" type="AnimationPlayer" parent="." index="1"]
+[node name="light-1" type="OmniLight" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0 )
+layers = 1
+light_color = Color( 0.905882, 0.976471, 1, 1 )
+light_energy = 0.5
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0.0705882, 0.0901961, 0.117647, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 96.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
+
+[node name="light-2" type="OmniLight" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32, 0 )
+layers = 1
+light_color = Color( 0.905882, 0.976471, 1, 1 )
+light_energy = 0.5
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0.0705882, 0.0901961, 0.117647, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 96.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
+
+[node name="animation" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = "setup"

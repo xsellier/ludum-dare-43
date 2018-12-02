@@ -1,14 +1,14 @@
-[gd_resource type="World" load_steps=2 format=2]
+[gd_resource type="Environment" format=2]
 
-[sub_resource type="Environment" id=4]
+[resource]
 
 background_mode = 0
 background_sky_custom_fov = 0.0
 background_color = Color( 0, 0, 0, 1 )
 background_energy = 1.0
 background_canvas_max_layer = 0
-ambient_light_color = Color( 0.984314, 0.870588, 0.74902, 1 )
-ambient_light_energy = 0.5
+ambient_light_color = Color( 0.905882, 0.976471, 1, 1 )
+ambient_light_energy = 0.3
 ambient_light_sky_contribution = 1.0
 fog_enabled = false
 fog_color = Color( 0.5, 0.6, 0.7, 1 )
@@ -37,7 +37,7 @@ ss_reflections_fade_in = 0.15
 ss_reflections_fade_out = 2.0
 ss_reflections_depth_tolerance = 0.2
 ss_reflections_roughness = true
-ssao_enabled = false
+ssao_enabled = true
 ssao_radius = 1.0
 ssao_intensity = 1.0
 ssao_radius2 = 0.0
@@ -48,13 +48,13 @@ ssao_color = Color( 0, 0, 0, 1 )
 ssao_quality = 0
 ssao_blur = 3
 ssao_edge_sharpness = 4.0
-dof_blur_far_enabled = false
-dof_blur_far_distance = 10.0
+dof_blur_far_enabled = true
+dof_blur_far_distance = 106.0
 dof_blur_far_transition = 5.0
 dof_blur_far_amount = 0.1
 dof_blur_far_quality = 1
-dof_blur_near_enabled = false
-dof_blur_near_distance = 2.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 8.0
 dof_blur_near_transition = 1.0
 dof_blur_near_amount = 0.1
 dof_blur_near_quality = 1
@@ -77,10 +77,5 @@ adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Adjustments", "Ambient Light", "Auto Exposure", "Background", "DOF Far Blur", "DOF Near Blur", "Glow", "SS Reflections", "SSAO", "Tonemap" ]
-
-[resource]
-
-environment = SubResource( 4 )
-_sections_unfolded = [ "Resource" ]
+_sections_unfolded = [ "Ambient Light", "Background", "DOF Far Blur", "DOF Near Blur", "Fog", "SSAO" ]
 

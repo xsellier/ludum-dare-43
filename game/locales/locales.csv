@@ -1,0 +1,65 @@
+,en,fr
+BUTTON_ABANDON,Abandon,Abandonner
+BUTTON_ADOPT,Adopt,Adopter
+BUTTON_APPLY,Apply,Appliquer
+BUTTON_BACK,Back,Précédent
+BUTTON_BUY_ANOTHER_ONE,Buy another one,En acheter une autre
+BUTTON_CANCEL,Cancel,Annuler
+BUTTON_CLOSE,Close,Fermer
+BUTTON_CONFIRM,Confirm,Confirmer
+BUTTON_CREDITS,Credits,Crédits
+BUTTON_EXIT,Exit,Quitter
+BUTTON_LOAD,Load,Charger
+BUTTON_LOAD_GAME,Load game,Charger une partie
+BUTTON_MAIN_MENU,Main menu,Menu principal
+BUTTON_NEXT,Next,Suivant
+BUTTON_OK,Ok,Ok
+BUTTON_OPTIONS,Options,Options
+BUTTON_RESET,Reset,Reset
+BUTTON_SKIP,Skip,Passer
+BUTTON_START,Start,Commencer
+BUTTON_TOO_BAD,Too bad,C'est dommage
+DROPDOWN_LANGUAGE,Languages,Langues
+LABEL_BORDERLESS_WINDOW,Borderless window,Fenêtre sans bord
+LABEL_BUY_PRICE,Buy price,Prix d'achat
+LABEL_CHARACTERS,Characters,Personnages
+LABEL_COMPUTER,Computer,Ordinateur
+LABEL_CREATION_DATE,Creation date,Date d'ouverture
+LABEL_DIFFICULTY_EASY,Easy,Facile
+LABEL_DIFFICULTY_HARD,Hard,Difficile
+LABEL_DIFFICULTY_INSANE,Insane,Impossible
+LABEL_DIFFICULTY_NORMAL,Normal,Normale
+LABEL_FLOOR,Floor,Sol
+LABEL_HOME,Home,Maison
+LABEL_IDLE,Idle,Inactif
+LABEL_LOADING,Loading,Chargement
+LABEL_MAP_SIZE_HUGE,Huge,Énorme
+LABEL_MAP_SIZE_LARGE,Large,Grande
+LABEL_MAP_SIZE_MEDIUM,Medium,Moyenne
+LABEL_MAP_SIZE_SMALL,Small,Petite
+LABEL_MAP_SIZE_TINY,Tiny,Minuscule
+LABEL_MONEY_EFFICIENCY,Cost efficiency,Coût de production
+LABEL_MONTH,Month,Mois
+LABEL_NAME,Name,Nom
+LABEL_NEW_GAME,New game,Nouvelle partie
+LABEL_NO,No,Non
+LABEL_NO_MONEY,Too expensive,Trop cher
+LABEL_NO_SCORE,No score uploaded yet!,Soit le premier à envoyer ton score
+LABEL_NONE,None,Aucun
+LABEL_ORDER_BY,Order by,Trier par
+LABEL_PILLAR,Pillar,Pillier
+LABEL_PLANT,Plant,Plante
+LABEL_PRESS_KEY,Press,Appuyez sur
+LABEL_PRINTER,Printer,Imprimante
+LABEL_SCORE,Score,Score
+LABEL_SKILLS,Skills,Compétences
+LABEL_SOUND,Sound,Son
+LABEL_SOUND_SETTINGS,Sound settings,Paramètres sonores
+LABEL_SOUNDFX,SoundFX,Effets spéciaux
+LABEL_STAFF,Staff,Équipe
+LABEL_TABLEPLANT,Table,Table
+LABEL_VSYNC,VSync,Sync. verticale
+LABEL_WALL,Wall,Mur
+LABEL_WORD_OR,or,ou
+LABEL_WORK,Status,Occupation
+LABEL_YES,Yes,Oui

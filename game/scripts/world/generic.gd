@@ -4,20 +4,60 @@ extends Navigation
 # Member variables
 const SPEED = 4.0
 
-var camrot = 0.0
-
+var spawner = null
 var begin = Vector3()
 var end = Vector3()
 var m = SpatialMaterial.new()
 
-var path = []
-var draw_path = true
+onready var gate_node = get_node('interactif/gate')
 
+var path = []
+var draw_path = OS.is_debug_build()
+var current_character = null
+
+func _ready():
+  m.flags_unshaded = true
+  m.flags_use_point_size = true
+  m.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
+
+  set_process_input(true)
+
+  if has_node('character'):
+    set_character(get_node('character'), false)
+  elif has_node('interactif/spawner'):
+    spawner = get_node('interactif/spawner')
+    spawner.connect('spawn_character', self, 'set_character')
+
+func set_character(character_node, use_spawner = true):
+  var position = gate_node.translation
+
+  if use_spawner:
+    add_child(character_node)
+    position = spawner.translation
+
+  current_character = character_node
+  current_character.translation = get_closest_point(position)
+  gate_node.connect_signals()
+
+func _get_character():
+  var character = null
+
+  if current_character != null and not current_character.is_dead():
+    character = current_character
+
+  return character
 
 func _process(delta):
+  var character = _get_character()
+
+  # Guardian clause
+  if character == null:
+    return
+
   if (path.size() > 1):
-    var to_walk = delta*SPEED
+    var to_walk = delta * SPEED
     var to_watch = Vector3(0, 1, 0)
+
     while(to_walk > 0 and path.size() >= 2):
       var pfrom = path[path.size() - 1]
       var pto = path[path.size() - 2]
@@ -36,8 +76,9 @@ func _process(delta):
     
     var t = Transform()
     t.origin = atpos
-    t=t.looking_at(atpos + atdir, Vector3(0, 1, 0))
-    get_node("character").set_transform(t)
+
+    t = t.looking_at(atpos + atdir, Vector3(0, 1, 0))
+    character.set_transform(t)
     
     if (path.size() < 2):
       path = []
@@ -67,19 +108,18 @@ func _update_path():
 
 
 func _input(event):
+  var character = _get_character()
+
+  # Guardian clause
+  if character == null:
+    return
+
   if (event.is_class("InputEventMouseButton") and event.button_index == BUTTON_LEFT and event.pressed):
     var from = get_node("camera/camera").project_ray_origin(event.position)
     var to = from + get_node("camera/camera").project_ray_normal(event.position)*100
-    var p = get_closest_point_to_segment(from, to)
     
-    begin = get_closest_point(get_node("character").get_translation())
-    end = p
+    begin = get_closest_point(character.get_translation())
+    end = get_closest_point_to_segment(from, to)
 
     _update_path()
 
-func _ready():
-  set_process_input(true)
-
-  m.flags_unshaded = true
-  m.flags_use_point_size = true
-  m.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
