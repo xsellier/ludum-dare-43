@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/craterobj.obj-255d1abbc034a57194d69818421e3f36.mesh"
+
+[deps]
+
+files=[ "res://.import/craterobj.obj-255d1abbc034a57194d69818421e3f36.mesh" ]
+
+source_file="res://assets/craterobj.obj"
+dest_files=[ "res://.import/craterobj.obj-255d1abbc034a57194d69818421e3f36.mesh", "res://.import/craterobj.obj-255d1abbc034a57194d69818421e3f36.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
