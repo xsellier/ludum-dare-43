@@ -65,5 +65,4 @@ file_logging/enable_file_logging=true
 [rendering]
 
 environment/default_clear_color=Color( 0.0705882, 0.0901961, 0.117647, 1 )
-quality/filters/msaa=2
 quality/dynamic_fonts/use_oversampling=true

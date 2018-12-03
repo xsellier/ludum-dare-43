@@ -26,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.8091677"
-     inkscape:cx="-2060.8229"
-     inkscape:cy="4385.6359"
+     inkscape:zoom="0.46656275"
+     inkscape:cx="-3417.5407"
+     inkscape:cy="6240.6711"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -380,10 +380,11 @@
        id="g1194"
        inkscape:export-filename="/home/binogure/work/github/xsellier/ludum-dare-43/game/assets/ui/9-patch.png"
        inkscape:export-xdpi="32.91"
-       inkscape:export-ydpi="32.91">
+       inkscape:export-ydpi="32.91"
+       transform="translate(3.9687304,-115.09374)">
       <path
          sodipodi:nodetypes="ccc"
-         style="fill:none;fill-rule:evenodd;stroke:#d86f07;stroke-width:2.64583325;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-rule:evenodd;stroke:#9f6f40;stroke-width:2.64583325;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.78431374"
          d="m -825.49999,-1221.7083 28.44047,-29.1042 h 164.04166"
          id="path1189"
          inkscape:connector-curvature="0" />
@@ -393,13 +394,13 @@
          height="37.041668"
          width="164.04167"
          id="rect1187"
-         style="opacity:1;fill:#fdd4ad;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#d86f07;stroke-width:1.32291663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+         style="opacity:1;fill:#f6ebe0;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#9f6f40;stroke-width:1.32291663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.78431374;paint-order:normal" />
       <path
          sodipodi:nodetypes="ccc"
          inkscape:connector-curvature="0"
          id="path1185"
          d="m -825.49999,-1221.7083 29.10417,-29.1042 h 163.37796"
-         style="fill:none;fill-rule:evenodd;stroke:#fdd4ad;stroke-width:1.32291663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.58823529" />
+         style="fill:none;fill-rule:evenodd;stroke:#9f6f40;stroke-width:1.32291663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.78431374" />
     </g>
     <rect
        style="opacity:1;fill:#fff2e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.64583325;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
@@ -421,7 +422,7 @@
        height="19.618925"
        width="372.75958"
        id="rect869"
-       style="opacity:1;fill:#d86f07;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.64583325;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;fill:#9f6f40;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.64583325;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        inkscape:export-filename="/home/binogure/work/github/xsellier/ludum-dare-43/game/assets/ui/range-foreground.png"
        inkscape:export-xdpi="10.357397"
        inkscape:export-ydpi="10.357397" />
@@ -550,6 +551,28 @@
            x="-558.22449"
            y="-851.29169" />
       </g>
+    </g>
+    <g
+       transform="translate(-825.5,-751.41663)"
+       id="g1525"
+       inkscape:export-filename="/home/binogure/work/github/xsellier/ludum-dare-43/game/assets/ui/panel-border.png"
+       inkscape:export-xdpi="32.91"
+       inkscape:export-ydpi="32.91">
+      <rect
+         ry="5.2916665"
+         rx="5.2916665"
+         y="-655.50006"
+         x="-111.125"
+         height="74.083336"
+         width="74.083336"
+         id="rect1521"
+         style="opacity:1;fill:#f6eae0;fill-opacity:0.58823532;fill-rule:nonzero;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1523"
+         transform="scale(0.26458333)"
+         d="m -400,-2477.4805 c -11.08,0 -20,8.92 -20,20 v 240 c 0,11.08 8.92,20 20,20 h 240 c 11.08,0 20,-8.92 20,-20 v -240 c 0,-11.08 -8.92,-20 -20,-20 z m 4.28516,5 h 231.42968 c 10.68427,0 19.28516,8.6009 19.28516,19.2852 v 231.4277 c 0,10.6843 -8.60089,19.2871 -19.28516,19.2871 h -231.42968 c -10.68427,0 -19.28516,-8.6028 -19.28516,-19.2871 v -231.4277 c 0,-10.6843 8.60089,-19.2852 19.28516,-19.2852 z"
+         style="opacity:1;fill:#9f6f40;fill-opacity:0.78431374;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     </g>
   </g>
 </svg>

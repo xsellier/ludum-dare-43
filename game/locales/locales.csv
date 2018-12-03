@@ -67,21 +67,22 @@ LABEL_CONGRATULATIONS,Congratulations,Félicitations
 LABEL_GAMEOVER,Game over,Game over
 LABEL_SETTLER_KILLED,"You've sacrificed %s settlers","Vous avez sacrifiés %s colons"
 LABEL_INSTRUCTIONS,"PITCH:
-Your colon ship just crashed into an unknown planet!
-The artificial intelligence of the on-board computer decided to wake the crew in order to save the settlers.
+Your colon ship just crashed into an unknown planet! Pieces of your shuttle are scattered all over the landing area.
+The artificial intelligence of the on-board computer calculated that it will also be necessary to recover fuel and decided to wake the crew in order to save the settlers.
 The stasis modules are defective, each crew member removed from the cryosleep will be sacrificed.
 If the crew dies, then the mission is a failure. 
 
-COMMANDS:
-Use WASD to get around
-You can rotate the camera with the right mouse click
-The wheel allows zoom-in/zoom-out","PITCH:
-Votre vaisseau de colon vient de s'écraser sur une planète inconnue!
-L'intelligence artificielle de l'ordinateur de bord décide de réveiller l'équipage afin de sauver les colons.
+Your mission, to collect the ore and spare parts present in the crash zone","PITCH:
+Votre vaisseau de colon vient de s'écraser sur une planète inconnue! Des morceaux de votre navette sont éparpillés un peu partout sur la zone d'atterissage.
+L'intelligence artificielle de l'ordinateur de bord a calculer qu'il faudra également récuperer du carburant et décide de réveiller l'équipage afin de sauver les colons.
 Les modules de stases sont défectueux, chaque membre d'équipage sorti du cryosommeil, sera sacrifié.
 Si l'équipage meurt, alors la mission est un échec. 
 
-COMMANDES:
+Votre mission, collecter le minerai et les pièces détachées présents sur la zone de crash"
+LABEL_COMMANDS,"COMMANDS:
+Use QZSD to get around
+You can rotate the camera with the right mouse click
+The wheel allows zoom-in/zoom-out","COMMANDES:
 Utilisez QZSD pour vous déplacer
 Vous pouvez tourner la caméra avec le clique droit de la souris
 La molette permet de zoom-in/zoom-out"

@@ -1127,6 +1127,7 @@ _sections_unfolded = [ "custom_constants" ]
 
 [node name="icon" type="TextureRect" parent="info/container/container/oxygen" index="0"]
 
+self_modulate = Color( 0.623529, 0.435294, 0.25098, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1143,7 +1144,7 @@ size_flags_vertical = 1
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="value" type="ProgressBar" parent="info/container/container/oxygen" index="1"]
 
@@ -1193,6 +1194,7 @@ _sections_unfolded = [ "Mouse", "Rect", "custom_constants" ]
 
 [node name="icon" type="TextureRect" parent="info/container/container/food" index="0"]
 
+self_modulate = Color( 0.623529, 0.435294, 0.25098, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1209,7 +1211,7 @@ size_flags_vertical = 1
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
-_sections_unfolded = [ "Focus", "Mouse", "Rect" ]
+_sections_unfolded = [ "Focus", "Mouse", "Rect", "Visibility" ]
 
 [node name="value" type="ProgressBar" parent="info/container/container/food" index="1"]
 

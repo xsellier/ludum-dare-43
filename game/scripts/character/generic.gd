@@ -15,7 +15,7 @@ const CHARACTER_STATE = {
   }
 }
 
-const SPEED = 4.0
+const SPEED = 3.8
 const NINE_PATCH_DECAL = Vector2(0.0, -20.0)
 const node_util = preload('res://scripts/utils/node.gd')
 
@@ -51,7 +51,8 @@ func set_health_decr(value):
 func free_object():
   if object_to_free != null:
     ui_node.add_resource(object_to_free.get_resource())
-    object_to_free.queue_free()
+
+    object_to_free.grab_object()
     object_to_free = null
 
 func _update_health(delta):

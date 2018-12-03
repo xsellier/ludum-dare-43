@@ -27,7 +27,6 @@ lod_max_hysteresis = 0.0
 
 [node name="interactif" type="Spatial" parent="." index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="exit" type="Position3D" parent="interactif" index="0"]
