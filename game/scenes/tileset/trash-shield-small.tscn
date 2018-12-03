@@ -7,7 +7,7 @@
 
 extents = Vector3( 1.02515, 0.239717, 0.633836 )
 
-[node name="gate-0" type="Spatial"]
+[node name="gate-0" type="Spatial" index="0"]
 
 _sections_unfolded = [ "Transform", "material" ]
 
@@ -26,8 +26,8 @@ gravity = 9.8
 linear_damp = 0.1
 angular_damp = 1.0
 priority = 0.0
-monitoring = true
-monitorable = false
+monitoring = false
+monitorable = true
 collision_layer = 1
 collision_mask = 1
 audio_bus_override = false

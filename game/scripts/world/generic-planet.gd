@@ -26,9 +26,7 @@ func _generate_mines():
     var mine_scene_instance = MINE_SCENE.instance()
 
     interactive_node.get_node('mine').add_child(mine_scene_instance)
-
     mine_scene_instance.translation = mine_spot.translation
-    mine_scene_instance.connect('character_pick_zinc', self, 'character_pick_zinc')
 
 func _generate_trash():
   var trash_spots = interactive_node.get_node('trash/spot')
@@ -44,14 +42,4 @@ func _generate_trash():
     var trash_scene_instance = TRASH_SCENE.instance()
 
     interactive_node.get_node('trash').add_child(trash_scene_instance)
-
     trash_scene_instance.translation = trash_spot.translation
-    trash_scene_instance.connect('character_pick_trash', self, 'character_pick_trash')
-
-func character_pick_zinc(player, zinc):
-  # TODO add zinc to game stats
-  zinc.queue_free()
-
-func character_pick_trash(player, trash):
-  # TODO add trash to game stats
-  trash.queue_free()

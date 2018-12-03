@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/tileset/trash.gd" type="Script" id=1]
 
-[node name="trash" type="Spatial"]
+[node name="trash" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
