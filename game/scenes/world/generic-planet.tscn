@@ -445,8 +445,8 @@ _sections_unfolded = [ "Albedo" ]
 material = SubResource( 14 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 top_radius = 7.5
-bottom_radius = 8.5
-height = 10.0
+bottom_radius = 9.5
+height = 16.0
 radial_segments = 64
 rings = 4
 
@@ -605,7 +605,6 @@ __meta__ = {
 
 [node name="objects" type="Spatial" parent="." index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="rocks" type="Spatial" parent="objects" index="0"]
@@ -1675,7 +1674,6 @@ _sections_unfolded = [ "Geometry", "LOD", "Transform" ]
 
 [node name="spaceship" type="Spatial" parent="objects" index="1"]
 
-editor/display_folded = true
 transform = Transform( -0.296326, 0, 0.40273, 0, 0.5, 0, -0.40273, 0, -0.296326, 5.42319, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
@@ -1877,7 +1875,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance13" type="MeshInstance" parent="objects/spaceship" index="12"]
 
-transform = Transform( 0.997856, 0.0654072, -7.45058e-09, 0.00389753, -0.0594612, -0.998223, -0.0652912, 0.996083, -0.0595887, -62.9155, 7.97624, -7.51782 )
+transform = Transform( 0.997856, 0.0654072, -7.45058e-09, 0.00389753, -0.0594612, -0.998223, -0.0652913, 0.996083, -0.0595887, -62.7802, 7.8533, -5.45836 )
 layers = 1
 material_override = null
 cast_shadow = 1
