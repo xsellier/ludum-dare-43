@@ -1,8 +1,8 @@
 extends Navigation
 
 const VALUES = {
-  oxygen = -2.0,
-  food = -1.0
+  oxygen = -4.0,
+  food = -2.0
 }
 
 # Member variables

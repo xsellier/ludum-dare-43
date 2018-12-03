@@ -17,10 +17,10 @@ const WORLDS = [{
 }]
 
 onready var world_index = 0
-onready var environment_node = get_node('WorldEnvironment')
 onready var world_parent = get_node('world')
 onready var timer_node = get_node('loader')
 onready var loading_panel = get_node('loading/center')
+onready var ui_node = get_node('ui')
 
 var previous_world = null
 
@@ -32,7 +32,7 @@ func _ready():
 
 func attach_new_world():
   # Update environment
-  environment_node.environment = WORLDS[world_index].world
+  # environment_node.environment = WORLDS[world_index].world
 
   node_util.reparent(get_world_scene(), world_parent)
 
@@ -65,6 +65,7 @@ func get_world_scene():
   return WORLDS[world_index].instance
 
 func respawn():
-  world_index = 1
-  WORLDS[0].respawn = true
-  change_world()
+  if not ui_node.is_gameover():
+    world_index = 1
+    WORLDS[0].respawn = true
+    change_world()

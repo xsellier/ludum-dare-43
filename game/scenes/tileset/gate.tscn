@@ -49,4 +49,27 @@ shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
+[node name="OmniLight" type="OmniLight" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44662, -0.37162 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 6.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 1.5
+omni_attenuation = 0.435277
+omni_shadow_mode = 1
+omni_shadow_detail = 0
+_sections_unfolded = [ "Light", "Omni" ]
+
 

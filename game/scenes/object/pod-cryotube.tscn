@@ -49,7 +49,7 @@ surfaces/2 = {
 "vertex_count": 362
 }
 
-[node name="PodCryoTube" type="MeshInstance"]
+[node name="PodCryoTube" type="MeshInstance" index="0"]
 
 transform = Transform( -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0 )
 layers = 1

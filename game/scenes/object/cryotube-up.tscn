@@ -63,7 +63,7 @@ surfaces/3 = {
 "vertex_count": 540
 }
 
-[node name="CryoTubeUp" type="MeshInstance"]
+[node name="CryoTubeUp" type="MeshInstance" index="0"]
 
 layers = 1
 material_override = null

@@ -2,6 +2,7 @@ extends 'res://scripts/world/generic.gd'
 
 const MINE_SCENE = preload('res://scenes/tileset/mine.tscn')
 const TRASH_SCENE = preload('res://scenes/tileset/trash.tscn')
+const SCALE_THRESHOLD = [0.8, 3.0]
 
 onready var mine_spots = interactive_node.get_node('mine/spot')
 
@@ -24,8 +25,12 @@ func _generate_mines():
 
   for mine_spot in mines_to_generate:
     var mine_scene_instance = MINE_SCENE.instance()
+    var scale_value = number_util.randomf(SCALE_THRESHOLD[0], SCALE_THRESHOLD[1])
 
     interactive_node.get_node('mine').add_child(mine_scene_instance)
+
+    mine_scene_instance.scale_object_local(Vector3(scale_value, scale_value, scale_value))
+    mine_scene_instance.rotate_y(number_util.randomf(0, 1))
     mine_scene_instance.translation = mine_spot.translation
 
 func _generate_trash():

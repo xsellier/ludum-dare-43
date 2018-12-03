@@ -1,8 +1,80 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ui/theme-main.tres" type="Theme" id=1]
 [ext_resource path="res://assets/ui/zinc.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/engine.png" type="Texture" id=3]
+[ext_resource path="res://fonts/font-title.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://fonts/title/48.tres" type="DynamicFont" id=5]
+[ext_resource path="res://fonts/title/32.tres" type="DynamicFont" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 72
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "setup"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7, -2 ), Vector2( -5, 28 ), Vector2( 11, -1 ), Vector2( 19, 21 ), Vector2( -18, 42 ), Vector2( -3, 11 ), Vector2( -37, 16 ), Vector2( -11, 41 ), Vector2( -21, 7 ), Vector2( -18, -3 ), Vector2( -2, 5 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("gameover:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("gameover:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 4, 4 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("container:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="main" type="CanvasLayer"]
 
@@ -14,6 +86,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="container" type="VBoxContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -28,7 +101,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 4
 alignment = 0
-_sections_unfolded = [ "Mouse", "custom_constants" ]
+_sections_unfolded = [ "Mouse", "Visibility", "custom_constants" ]
 
 [node name="spaceship" type="PanelContainer" parent="container" index="0"]
 
@@ -222,5 +295,170 @@ exp_edit = false
 rounded = false
 percent_visible = false
 _sections_unfolded = [ "Grow Direction", "Percent", "Rect", "Size Flags" ]
+
+[node name="gameover" type="ColorRect" parent="." index="1"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1600.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 1600, 900 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+color = Color( 0.0705882, 0.0901961, 0.117647, 0.588235 )
+_sections_unfolded = [ "Grow Direction", "Material", "Mouse", "Rect", "Theme", "Visibility" ]
+
+[node name="center" type="CenterContainer" parent="gameover" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 1600.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 1600, 800 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Mouse", "Rect" ]
+
+[node name="container" type="VBoxContainer" parent="gameover/center" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 356.0
+margin_top = 159.0
+margin_right = 1244.0
+margin_bottom = 641.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 32
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="sacrificed" type="Label" parent="gameover/center/container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -6.28703
+margin_top = 9.55843
+margin_right = 881.713
+margin_bottom = 265.558
+rect_min_size = Vector2( 0, 256 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 2
+text = "LABEL_SETTLER_KILLED"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Theme", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="animation" type="AnimationPlayer" parent="gameover/center/container/sacrificed" index="0"]
+
+root_node = NodePath("..")
+autoplay = "setup"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/setup = SubResource( 3 )
+blend_times = [  ]
+
+[node name="label" type="Label" parent="gameover/center/container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 288.0
+margin_right = 888.0
+margin_bottom = 374.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 0
+custom_constants/shadow_as_outline = 2
+text = "LABEL_GAME_OVER"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="continue" type="Button" parent="gameover/center/container" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 316.0
+margin_top = 406.0
+margin_right = 572.0
+margin_bottom = 482.0
+rect_min_size = Vector2( 256, 64 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BUTTON_OK"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="animation" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/setup = SubResource( 2 )
+blend_times = [  ]
 
 

@@ -63,7 +63,7 @@ surfaces/3 = {
 "vertex_count": 120
 }
 
-[node name="ConsoleNavigation" type="MeshInstance"]
+[node name="ConsoleNavigation" type="MeshInstance" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648384, 0, 0 )
 layers = 1

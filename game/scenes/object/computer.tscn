@@ -63,7 +63,7 @@ surfaces/3 = {
 "vertex_count": 16
 }
 
-[node name="Computer" type="MeshInstance"]
+[node name="Computer" type="MeshInstance" index="0"]
 
 layers = 1
 material_override = null

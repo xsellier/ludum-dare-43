@@ -12,19 +12,16 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="world" type="Spatial" parent="." index="0"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
-
-environment = null
-
-[node name="loader" type="Timer" parent="." index="2"]
+[node name="loader" type="Timer" parent="." index="1"]
 
 process_mode = 1
 wait_time = 0.5
 one_shot = true
 autostart = false
 
-[node name="loading" type="CanvasLayer" parent="." index="3"]
+[node name="loading" type="CanvasLayer" parent="." index="2"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -70,7 +67,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Mouse", "Theme" ]
 
-[node name="ui" parent="." index="4" groups=[
+[node name="ui" parent="." index="3" groups=[
 "ui",
 ] instance=ExtResource( 3 )]
 

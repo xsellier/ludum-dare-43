@@ -1,6 +1,5 @@
 extends Spatial
 
-const DECR_INTERVAL = 0.5
 const CHARACTER_STATE = {
   WALK = {
     animation = 'walk'
@@ -34,7 +33,6 @@ onready var ui_node = get_tree().get_nodes_in_group('ui')[0]
 var current_state = CHARACTER_STATE.IDLE
 var path = []
 var object_to_free = null
-var delta_acc = 0
 var health_decr = null
 
 func _ready():
@@ -56,21 +54,16 @@ func free_object():
     object_to_free.queue_free()
     object_to_free = null
 
-func _update_health():
+func _update_health(delta):
   if health_decr != null:
-    oxygen_value.value += health_decr.oxygen
-    food_value.value += health_decr.food
+    oxygen_value.value += health_decr.oxygen * delta
+    food_value.value += health_decr.food * delta
 
   if food_value.value <= 0 or oxygen_value.value <= 0:
     set_dead()
 
 func _process(delta):
-  delta_acc += delta
-
-  if delta_acc > DECR_INTERVAL:
-    delta_acc -= DECR_INTERVAL
-
-    _update_health()
+  _update_health(delta)
   _update_gui()
 
   if current_state == CHARACTER_STATE.WALK:
