@@ -35,7 +35,7 @@ surfaces/1 = {
 "vertex_count": 156
 }
 
-[node name="TrashAntenna" type="MeshInstance"]
+[node name="TrashAntenna" type="MeshInstance" index="0"]
 
 transform = Transform( 0.311489, 0.0965914, -0.945328, -0.95025, 0.0316623, -0.309875, 0, 0.99482, 0.101648, 0, 0, 0 )
 layers = 1

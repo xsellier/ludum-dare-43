@@ -34,5 +34,7 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="characters" type="Spatial" parent="." index="3"]
 
+[node name="dead_characters" type="Spatial" parent="." index="4"]
+
 
 [editable path="camera"]

@@ -1,5 +1,10 @@
 extends 'res://scripts/world/generic.gd'
 
+const VALUES = {
+  oxygen = 1.0,
+  food = -1.0
+}
+
 onready var spawner_nodes = interactive_node.get_node('spawners')
 onready var available_spawners = [] + spawner_nodes.get_children()
 

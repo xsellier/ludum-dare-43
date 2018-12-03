@@ -15,7 +15,7 @@ func generate_world(game_node):
 
 func _generate_mines():
   var mines_to_generate = [] + mine_spots.get_children()
-  var mine_amount_remove = number_util.random(2, mines_to_generate.size() - 2)
+  var mine_amount_remove = number_util.random(3, mines_to_generate.size() - 3)
 
   for index in range(0, mine_amount_remove):
     var mine_to_remove = number_util.random(0, mines_to_generate.size())
@@ -31,7 +31,7 @@ func _generate_mines():
 func _generate_trash():
   var trash_spots = interactive_node.get_node('trash/spot')
   var trashs_to_generate = [] + trash_spots.get_children()
-  var trash_amount_remove = number_util.random(4, trashs_to_generate.size() - 3)
+  var trash_amount_remove = number_util.random(5, trashs_to_generate.size() - 3)
 
   for index in range(0, trash_amount_remove):
     var trash_to_remove = number_util.random(0, trashs_to_generate.size())

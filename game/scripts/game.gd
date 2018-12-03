@@ -6,12 +6,14 @@ const WORLDS = [{
   scene = preload('res://scenes/world/generic-spaceship.tscn'),
   instance = null,
   world = preload('res://world/spaceship.tres'),
-  generated = false
+  generated = false,
+  respawn = false
 }, {
   scene = preload('res://scenes/world/generic-planet.tscn'),  
   instance = null,
   world = preload('res://world/planet.tres'),
-  generated = false
+  generated = false,
+  respawn = false
 }]
 
 onready var world_index = 0
@@ -34,7 +36,11 @@ func attach_new_world():
 
   node_util.reparent(get_world_scene(), world_parent)
 
-  if WORLDS[world_index].generated:
+  if WORLDS[world_index].respawn:
+    WORLDS[world_index].respawn = false
+
+    get_world_scene().call_deferred('generate_world', self)
+  elif WORLDS[world_index].generated:
     get_world_scene().call_deferred('restore')
   else:
     # Flag world as generated
@@ -57,3 +63,8 @@ func get_world_scene():
     WORLDS[world_index].instance = WORLDS[world_index].scene.instance()
 
   return WORLDS[world_index].instance
+
+func respawn():
+  world_index = 1
+  WORLDS[0].respawn = true
+  change_world()

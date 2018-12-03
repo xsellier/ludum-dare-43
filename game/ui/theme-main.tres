@@ -1,14 +1,56 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://ui/button/orange.hover.tres" type="StyleBox" id=1]
 [ext_resource path="res://ui/button/orange-normal.tres" type="StyleBox" id=2]
 [ext_resource path="res://ui/button/orange-pressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://ui/panel/orange-border.tres" type="StyleBox" id=4]
-[ext_resource path="res://fonts/text/18.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/ui/range-background.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/range-foreground.png" type="Texture" id=6]
+[ext_resource path="res://fonts/text/18.tres" type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 152, 8 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 1.0
+margin_bottom = 1.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+_sections_unfolded = [ "Margin" ]
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 152, 8 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 1.0
+margin_bottom = 1.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+_sections_unfolded = [ "Margin" ]
 
 [resource]
 
-default_font = ExtResource( 5 )
+default_font = ExtResource( 7 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -21,5 +63,10 @@ Button/styles/hover = ExtResource( 1 )
 Button/styles/normal = ExtResource( 2 )
 Button/styles/pressed = ExtResource( 3 )
 PanelContainer/styles/panel = ExtResource( 4 )
-_sections_unfolded = [ "Button", "Button/colors", "Button/fonts", "Button/styles", "PanelContainer", "PanelContainer/styles" ]
+ProgressBar/colors/font_color = Color( 0.941176, 0.941176, 0.941176, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = null
+ProgressBar/styles/bg = SubResource( 1 )
+ProgressBar/styles/fg = SubResource( 2 )
+_sections_unfolded = [ "Button", "Button/colors", "Button/fonts", "Button/styles", "PanelContainer", "PanelContainer/styles", "ProgressBar", "ProgressBar/styles" ]
 

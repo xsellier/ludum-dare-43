@@ -1,5 +1,10 @@
 extends Navigation
 
+const VALUES = {
+  oxygen = -2.0,
+  food = -1.0
+}
+
 # Member variables
 const number_util = preload('res://scripts/utils/number.gd')
 const node_util = preload('res://scripts/utils/node.gd')
@@ -22,13 +27,15 @@ func restore():
   node_util.reparent(character, characters_node)
   character.translation = get_closest_point(exit_node.translation)
   character.set_idle()
+  character.set_health_decr(VALUES)
 
 func _get_character():
   var characters = characters_node.get_children()
+  var character_index = characters.size() - 1
   var character = null
 
-  if characters.size() == 1 and not characters[0].is_dead():
-    character = characters[0]
+  if characters.size() > 0 and not characters[character_index].is_dead():
+    character = characters[character_index]
 
   return character
 
